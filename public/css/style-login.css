@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Video Background */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.9;
+    
+}
+
+/* Overlay transparan di atas video */
+.overlay {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Topbar */
+.topbar {
+    background-color: #2b7dd0;
+    color: white;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Logo dan Teks */
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.logo-text img {
+    height: 50px;
+}
+
+.logo-text .text {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Tombol Login */
+.login-button {
+    background-color: white;
+    color: #003366;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: small;
+    margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .login-button {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    .logo-text {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .logo-text .text {
+        text-align: left;
+        font-size: 12px;
+    }
+}

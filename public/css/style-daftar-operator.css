@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+/* Tombol Sidebar Responsif */
+.sidebar-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background-color: #1d5c99;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1d5c99;
+}
+
+/* Profil Admin/Operator */
+.user-info {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.user-info .greeting {
+  margin-right: 10px;
+  color: #333;
+  font-size: 15px;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-dropdown .profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #3498db;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  padding: 10px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Data Bar */
+.datauser-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d5c99;
+  padding: 10px 20px;
+}
+
+.datauser-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e7e2e2;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+/* Tombol Tambah */
+.add-user-button {
+  background-color: #0a74da;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Wrapper Tombol */
+.button-below-search {
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+  
+}
+
+/* Layout Utama */
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1d74b7;
+  color: white;
+  padding: 20px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  border-left: 4px solid transparent;
+  border-radius: 4px;
+  transition: background 0.3s, padding-left 0.3s, border-left-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #155a91;
+  border-left-color: #87ceeb;
+  padding-left: 25px;
+}
+
+.sidebar ul li a.active {
+  background-color: #dfe6e9;
+  color: #2d3436;
+  font-weight: bold;
+  border-left: 4px solid #0984e3;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Tombol Aksi */
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.edit-btn i {
+  color: #28a745;
+}
+
+.delete-btn i {
+  color: #dc3545;
+}
+
+/* Jumlah */
+.jumlah {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    top: 70px;
+    left: -250px;
+    height: calc(100% - 70px);
+    transition: left 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+
+
+  .sidebar-toggle-btn {
+    display: block;
+  }
+
+  .header {
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
