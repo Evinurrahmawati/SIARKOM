@@ -50,7 +50,11 @@
         <label for="password_confirmation">Konfirmasi Password</label>
         <input type="password" name="password_confirmation" id="password_confirmation">
 
+        <div class="tombol-container">
+        <a href="{{ route('admin.daftar-operator') }}" class="btn-kembali">← Kembali ke Daftar</a>
         <button type="submit">Simpan Perubahan</button>
+      </div>
+        
     </form>
 </div>
 

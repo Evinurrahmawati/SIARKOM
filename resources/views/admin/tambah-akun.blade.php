@@ -49,7 +49,10 @@
         <input type="text" name="nama_akun" id="nama_akun" required>
       </div>
 
-      <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Akun</button>
+      <div class="tombol-container">
+        <a href="{{ route('admin.daftar-akun-platform') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Akun</button>
+        </div>
     </form>
   </div>
 

@@ -59,7 +59,11 @@
         <input type="password" name="password_confirmation" id="password_confirmation" required>
       </div>
 
-      <button type="submit"><i class="fas fa-user-plus"></i> Tambah Operator</button>
+      <div class="tombol-container">
+        <a href="{{ route('admin.daftar-operator') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-user-plus"></i> Tambah Operator</button>
+      </div>
+      
     </form>
   </div>
 

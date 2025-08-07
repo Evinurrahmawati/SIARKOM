@@ -35,7 +35,11 @@
         <input type="text" name="nama_tema" id="nama_tema" value="{{ $tema->nama_tema }}" required>
       </div>
 
-      <button type="submit"><i class="fas fa-save"></i> Simpan Perubahan</button>
+      <div class="tombol-container">
+        <a href="{{ route('admin.daftar-tema') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-save"></i> Simpan Perubahan</button>
+      </div>
+      
     </form>
   </div>
 

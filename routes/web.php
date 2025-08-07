@@ -57,43 +57,43 @@ Route::middleware(['auth'])->group(function () {
         // Kelola Operator
         Route::get('/daftar-operator', [UserController::class, 'index'])->name('admin.daftar-operator');
         Route::get('/tambah-operator', [UserController::class, 'create'])->name('admin.tambah-operator');
-        Route::post('/tambah-operator', [UserController::class, 'store'])->name('users.store');
+        Route::post('/tambah-operator', [UserController::class, 'store'])->name('users.store')->middleware('xss');
         Route::get('/edit-operator/{id}', [UserController::class, 'edit'])->name('users.edit');
-        Route::put('/edit-operator/{id}', [UserController::class, 'update'])->name('users.update');
-        Route::delete('/hapus-operator/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+        Route::put('/edit-operator/{id}', [UserController::class, 'update'])->name('users.update')->middleware('xss');
+        Route::delete('/hapus-operator/{id}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('xss');
 
         // Kelola Platform
         Route::get('/daftar-platform', [PlatformController::class, 'index'])->name('admin.daftar-platform');
         Route::get('/tambah-platform', [PlatformController::class, 'create'])->name('admin.tambah-platform');
-        Route::post('/tambah-platform', [PlatformController::class, 'store'])->name('platform.store');
+        Route::post('/tambah-platform', [PlatformController::class, 'store'])->name('platform.store')->middleware('xss');
         Route::get('/edit-platform/{id}', [PlatformController::class, 'edit'])->name('platform.edit');
-        Route::put('/edit-platform/{id}', [PlatformController::class, 'update'])->name('platform.update');
-        Route::delete('/hapus-platform/{id}', [PlatformController::class, 'destroy'])->name('platform.destroy');
+        Route::put('/edit-platform/{id}', [PlatformController::class, 'update'])->name('platform.update')->middleware('xss');
+        Route::delete('/hapus-platform/{id}', [PlatformController::class, 'destroy'])->name('platform.destroy')->middleware('xss');
 
         // Kelola Akun Platform
         Route::get('/daftar-akun', [AkunPlatformController::class, 'index'])->name('admin.daftar-akun-platform');
         Route::get('/tambah-akun', [AkunPlatformController::class, 'create'])->name('admin.tambah-akun');
-        Route::post('/tambah-akun', [AkunPlatformController::class, 'store'])->name('akun-platform.store');
+        Route::post('/tambah-akun', [AkunPlatformController::class, 'store'])->name('akun-platform.store')->middleware('xss');
         Route::get('/edit-akun/{id}', [AkunPlatformController::class, 'edit'])->name('akun-platform.edit');
-        Route::put('/edit-akun/{id}', [AkunPlatformController::class, 'update'])->name('akun-platform.update');
-        Route::delete('/hapus-akun/{id}', [AkunPlatformController::class, 'destroy'])->name('akun-platform.destroy');
+        Route::put('/edit-akun/{id}', [AkunPlatformController::class, 'update'])->name('akun-platform.update')->middleware('xss');
+        Route::delete('/hapus-akun/{id}', [AkunPlatformController::class, 'destroy'])->name('akun-platform.destroy')->middleware('xss');
 
         // Arsip Konten
         Route::get('/arsip-konten', [ArsipKontenController::class, 'index'])->name('admin.daftar-arsip');
         Route::get('/arsip-konten/tambah', [ArsipKontenController::class, 'create'])->name('arsip-konten.create');
-        Route::post('/arsip-konten/tambah', [ArsipKontenController::class, 'store'])->name('arsip-konten.store');
+        Route::post('/arsip-konten/tambah', [ArsipKontenController::class, 'store'])->name('arsip-konten.store')->middleware('xss');
         Route::get('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'edit'])->name('arsip-konten.edit');
-        Route::put('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'update'])->name('arsip-konten.update');
-        Route::delete('/arsip-konten/hapus/{id}', [ArsipKontenController::class, 'destroy'])->name('arsip-konten.destroy');
+        Route::put('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'update'])->name('arsip-konten.update')->middleware('xss');
+        Route::delete('/arsip-konten/hapus/{id}', [ArsipKontenController::class, 'destroy'])->name('arsip-konten.destroy')->middleware('xss');
         Route::get('/arsip-konten/{id}/grafik', [ArsipKontenController::class, 'grafikPerArsip'])->name('arsip.grafik');
 
         // Kelola Tema
         Route::get('/daftar-tema', [TemaKontenController::class, 'index'])->name('admin.daftar-tema');
         Route::get('/tema/create', [TemaKontenController::class, 'create'])->name('admin.tambah-tema');
-        Route::post('/tema/store', [TemaKontenController::class, 'store'])->name('admin.tema.store');
+        Route::post('/tema/store', [TemaKontenController::class, 'store'])->name('admin.tema.store')->middleware('xss');
         Route::get('/tema/{id}/edit', [TemaKontenController::class, 'edit'])->name('admin.edit-tema');
-        Route::put('/tema/{id}', [TemaKontenController::class, 'update'])->name('admin.update-tema');
-        Route::delete('/tema/{id}', [TemaKontenController::class, 'destroy'])->name('admin.hapus-tema');
+        Route::put('/tema/{id}', [TemaKontenController::class, 'update'])->name('admin.update-tema')->middleware('xss');
+        Route::delete('/tema/{id}', [TemaKontenController::class, 'destroy'])->name('admin.hapus-tema')->middleware('xss');
 
         // Cetak
         Route::get('/arsip-konten/cetak-pdf', [ArsipCetakController::class, 'cetakPDF'])->name('arsip.cetak.pdf');
@@ -111,10 +111,10 @@ Route::middleware(['auth'])->group(function () {
         // Arsip Konten
         Route::get('/arsip-konten', [ArsipKontenController::class, 'index'])->name('operator.daftar-arsip');
         Route::get('/arsip-konten/tambah', [ArsipKontenController::class, 'create'])->name('operator.arsip.create');
-        Route::post('/arsip-konten/tambah', [ArsipKontenController::class, 'store'])->name('operator.arsip.store');
+        Route::post('/arsip-konten/tambah', [ArsipKontenController::class, 'store'])->name('operator.arsip.store')->middleware('xss');
         Route::get('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'edit'])->name('operator.arsip.edit');
-        Route::put('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'update'])->name('operator.arsip.update');
-        Route::delete('/arsip-konten/hapus/{id}', [ArsipKontenController::class, 'destroy'])->name('operator.arsip.destroy');
+        Route::put('/arsip-konten/edit/{id}', [ArsipKontenController::class, 'update'])->name('operator.arsip.update')->middleware('xss');
+        Route::delete('/arsip-konten/hapus/{id}', [ArsipKontenController::class, 'destroy'])->name('operator.arsip.destroy')->middleware('xss');
         Route::get('/arsip-konten/{id}/grafik', [ArsipKontenController::class, 'grafikPerArsip'])->name('operator.arsip.grafik');
 
         // Cetak

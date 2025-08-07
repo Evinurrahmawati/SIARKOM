@@ -39,7 +39,11 @@
         <input type="text" name="nama_platform" id="nama_platform" required>
       </div>
 
-      <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Platform</button>
+      <div class="tombol-container">
+        <a href="{{ route('admin.daftar-platform') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Platform</button>
+      </div>
+      
     </form>
   </div>
 

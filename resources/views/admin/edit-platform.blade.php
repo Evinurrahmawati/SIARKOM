@@ -37,7 +37,11 @@
         <label for="nama_platform">Nama Platform</label>
         <input type="text" name="nama_platform" id="nama_platform" value="{{ old('nama_platform', $platform->nama_platform) }}" required>
 
+        <div class="tombol-container">
+        <a href="{{ route('admin.daftar-platform') }}" class="btn-kembali">← Kembali ke Daftar</a>
         <button type="submit"><i class="fas fa-save"></i> Simpan Perubahan</button>
+        </div>
+        
     </form>
 </div>
 

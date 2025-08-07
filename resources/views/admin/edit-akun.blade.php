@@ -53,7 +53,11 @@
             <input type="text" name="nama_akun" id="nama_akun" value="{{ old('nama_akun', $akun->nama_akun) }}" required>
         </div>
 
+        <div class="tombol-container">
+        <a href="{{ route('admin.daftar-akun-platform') }}" class="btn-kembali">← Kembali ke Daftar</a>
         <button type="submit"><i class="fas fa-save"></i> Simpan Perubahan</button>
+        </div>
+        
     </form>
 </div>
 

@@ -39,7 +39,11 @@
         <input type="text" name="nama_tema" id="nama_tema" required placeholder="Contoh: Ekonomi, Pendidikan">
       </div>
 
-      <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Topik</button>
+      <div class="tombol-container">
+        <a href="{{ route('admin.daftar-tema') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-plus-circle"></i> Tambah Topik</button>
+      </div>
+      
     </form>
   </div>
 

@@ -100,7 +100,11 @@
         <input type="file" name="gambar" id="gambar" accept="image/*" required>
       </div>
 
-      <button type="submit"><i class="fas fa-save"></i> Simpan Arsip</button>
+      <div class="tombol-container">
+        <a href="{{ route('operator.daftar-arsip') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-save"></i> Simpan Arsip</button>
+      </div>
+      
     </form>
   </div>
 

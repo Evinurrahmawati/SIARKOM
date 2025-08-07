@@ -116,7 +116,11 @@
         @endif
       </div>
 
-      <button type="submit"><i class="fas fa-save"></i> Update Arsip</button>
+      <div class="tombol-container">
+        <a href="{{ route('operator.daftar-arsip') }}" class="btn-kembali">← Kembali ke Daftar</a>
+        <button type="submit"><i class="fas fa-save"></i> Update Arsip</button>
+      </div>
+      
     </form>
   </div>
 

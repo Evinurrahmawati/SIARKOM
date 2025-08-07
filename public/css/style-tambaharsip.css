@@ -66,6 +66,24 @@ button {
   margin-top: 10px;
 }
 
+.btn-kembali {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-kembali:hover {
+  background-color: #bbb;
+}
+
+
+
 button:hover {
   background-color: #144d80;
 }

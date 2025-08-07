@@ -177,5 +177,20 @@
     });
   </script>
 
+  <script>
+  // Auto-dismiss flash message after 3 seconds
+  document.addEventListener("DOMContentLoaded", function () {
+    const alert = document.querySelector(".alert.alert-success");
+    if (alert) {
+      setTimeout(() => {
+        alert.style.transition = "opacity 0.5s ease";
+        alert.style.opacity = "0";
+        setTimeout(() => alert.remove(), 500); // Remove after fade out
+      }, 3000); // 3000ms = 3 detik
+    }
+  });
+</script>
+
+
 </body>
 </html>
